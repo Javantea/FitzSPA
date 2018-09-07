@@ -20,7 +20,7 @@ The differential amplifier will cancel out all sorts of common mode noise and on
 
 Future versions will integrate a Cypress EZ-usb FX2 logic analyzer and power regulation, but they were excluded to reduce time and complexity for revision 1.x
 
-##Using
+## Using
 
 Connect the logic analyzer to the J1 connector. Pin1 in the upper left is AD0, the LSB. The bottom two pins are both ground. If you have an 8-bit logic analyzer, start with the 8 MSBs, and if all of your sampling is in the same range, try connecting to less significant pins for higher gain.
 
@@ -55,17 +55,17 @@ To measure with a shunt on GND, power supplied by FitzSPA:
 
 Fire up your logic analyzer, turn on your board, and you should see the live power consumption updated each clock cycle!
 
-##Building
+## Building
 Rev 1.1 is functional and continues to iron out some kinks. There are a few options for building out your board:
 
 #### Differential Amplifier:
 The AD8129 should provide much higher gains for more sensitive readings. However, I still haven't debugged why the AD8130 works fine and the AD8129 does not at G=10. For the time being, use the x30 unless you want to help the debug effort. the x29 is digikey AD8129ARMZ-ND
 #### Gain setting circuit:
 The gain of the differential amplifier is 1+(Rf/Rg). The default BOM uses 1k Ohm/100 Ohm, but you can vary this, or replace Rf with a potentiometer, such as digikey 987-1155-ND
-####Voltage Regulator Load:
+#### Voltage Regulator Load:
 the 5v to +-12v regulator needs a minimum load to work properly. I haven't needed them, but populating R1 and R2 with 2.4k ohm resistors should provide the required load. digikey RMCF0603FT2K40CT-ND
 
-####For the basic build you probably want:
+#### For the basic build you probably want:
 
 Component | Description | Value | notes | Digikey | Price
 --- | --- | --- | --- | --- | ---
